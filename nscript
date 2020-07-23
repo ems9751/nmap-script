@@ -23,6 +23,18 @@ read ans
     echo -e "\e[34m OS Scanning...\e[0m" 
     sudo nmap -O $IP &> nmap/OSscan.txt
      fi
+
+#### Searchsploit
+echo "Do you want to search for Service Exploit?"
+read ans
+     if [ "$ans" = "yes" ] || [ "$ans" = "YES" ]
+       then
+     echo "==================================="
+echo -en "Enter Service Running:"
+read ans
+     echo -e "\e[34m Exploit Scanning...\e[0m"
+searchsploit $ans
+     fi
 ### Metasploit
 echo "Do you want to start Metasploit Console?"
 read ans
